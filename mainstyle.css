@@ -1,0 +1,94 @@
+:root {
+    --peach: #E0AC9D;
+    --coral: #E88873;
+    --mauve: #A37774;
+    --slate: #5C6D70;
+    --charcoal: #484A47;
+}
+
+body {
+    background: linear-gradient(135deg, var(--peach) 0%, var(--coral) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.container {
+    position: relative;
+    padding: 2rem;
+}
+
+.cloud-icon {
+    width: 600px; /* Increased size */
+    height: 450px; /* Increased size */
+    position: relative;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+}
+
+.cloud-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Adjusted for bigger cloud */
+    height: 50%; /* Adjusted for bigger cloud */
+    background: transparent;
+    border: none;
+    resize: none;
+    font-size: 1.6rem; /* Increased font size */
+    color: var(--charcoal);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.controls {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.heart {
+    position: absolute;
+    background: var(--coral);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    animation: float 3s infinite;
+}
+
+/* Decorative shapes */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--coral);
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes float {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-20px); }
+}
+
+button {
+    background: var(--slate);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: var(--mauve);
+}
